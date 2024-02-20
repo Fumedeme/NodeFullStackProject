@@ -1,7 +1,14 @@
 const express = require("express");
 const errorHandler = require("./middleware/errorHandler");
+const connectDb = require("./config/dbConnection");
 const dotenv = require("dotenv").config();
 
+//MOngoDB password MongoSifre
+
+//1mfurkanyilmaz
+//tMUwFQCDHvd70eXo
+
+connectDb();
 const app = express();
 
 const port = process.env.PORT;
