@@ -11,7 +11,7 @@ const contactSchema = mongoose.Schema(
       required: [true, "Please add an email address"],
     },
     phone: {
-      type: Int,
+      type: String,
       required: [true, "Please give a phone number"],
     },
   },
