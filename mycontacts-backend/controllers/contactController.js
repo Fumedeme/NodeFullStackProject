@@ -51,6 +51,11 @@ const updateContact = asyncHandler(async (req, res) => {
     throw new Error("Contact Not found");
   }
 
+  if (contact.user_id !== req.user.id) {
+    res.status(403);
+    throw new Error("A user cannot change another user's contact");
+  }
+
   const updatedContact = await Contact.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -67,6 +72,11 @@ const deleteContact = asyncHandler(async (req, res) => {
   if (!contact) {
     res.status(404);
     throw new Error("Contact Not found");
+  }
+
+  if (contact.user_id !== req.user.id) {
+    res.status(403);
+    throw new Error("A user cannot delete another user's contact");
   }
 
   await Contact.deleteOne(contact);
