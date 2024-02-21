@@ -8,6 +8,7 @@ router.post("/register", register);
 
 router.post("/login", login);
 
+//Require token validation only if user wants to get current user
 router.get("/current", validateToken, current);
 
 module.exports = router;
