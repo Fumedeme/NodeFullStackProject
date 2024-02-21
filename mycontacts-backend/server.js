@@ -3,11 +3,6 @@ const errorHandler = require("./middleware/errorHandler");
 const connectDb = require("./config/dbConnection");
 const dotenv = require("dotenv").config();
 
-//MOngoDB password MongoSifre
-
-//1mfurkanyilmaz
-//tMUwFQCDHvd70eXo
-
 connectDb();
 const app = express();
 
@@ -21,5 +16,3 @@ app.use(errorHandler);
 app.listen(port, () => {
   console.log("server running on port", port);
 });
-
-//KALINAN DAKİKA 53:50
